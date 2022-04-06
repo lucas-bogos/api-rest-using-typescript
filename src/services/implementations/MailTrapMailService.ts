@@ -1,7 +1,7 @@
 import { IMailService, IMessage } from "../IMailService"
 import nodemailer from "nodemailer"
-import Mail from "nodemailer/lib/mailer";
-import { config } from "dotenv";config();
+import Mail from "nodemailer/lib/mailer"
+import { config } from "dotenv";config()
 
 export class MailTrapMailService implements IMailService {
   private transporter: Mail;

@@ -1,9 +1,9 @@
-import { User } from "../../entities/User";
-import { IUsersRepository } from "../IUsersRepository";
+import { User } from "../../entities/User"
+import { IUsersRepository } from "../IUsersRepository"
 
 // temporary repository
 export class MySqlUsersRepository implements IUsersRepository {
-  private users: User[] = [];
+  private users: User[] = []
 
   async findByEmail(email: string): Promise<User> {
     const user = this.users.find(user => user.email === email)

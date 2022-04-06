@@ -1,6 +1,6 @@
 import { User } from "../../entities/User"
 import { IUsersRepository } from "../../repositories/IUsersRepository"
-import { IMailService } from "../../services/IMailService";
+import { IMailService } from "../../services/IMailService"
 import { ICreateUserRequestDTO } from "./CreateUserDTO"
 
 export class CreateUserUseCase {
@@ -11,11 +11,11 @@ export class CreateUserUseCase {
 
   async execute(data: ICreateUserRequestDTO) {
     // check if user has inside of the database
-    const alreadyExists = await this.usersRepository.findByEmail(data.email);
+    const alreadyExists = await this.usersRepository.findByEmail(data.email)
     // return error for user when to exists user
     if(alreadyExists) throw new Error("User already exists")
     // get data users with data: ICreateUserRequestDTO
-    const user = new User(data);
+    const user = new User(data)
     // abstraction to saving
     await this.usersRepository.save(user)
     // send by mail
